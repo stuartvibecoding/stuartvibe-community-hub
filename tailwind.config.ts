@@ -63,6 +63,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-accent': 'var(--gradient-accent)',
+			},
+			boxShadow: {
+				'primary': 'var(--shadow-primary)',
+				'card': 'var(--shadow-card)',
+				'hero': 'var(--shadow-hero)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -87,6 +97,7 @@ export default {
 				}
 			},
 			animation: {
+				'wave': 'var(--wave-animation)',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
