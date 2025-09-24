@@ -126,8 +126,10 @@ const Home = () => {
             <p className="text-xl mb-8 opacity-90">
               Connect with fellow developers and start building amazing projects today.
             </p>
-            <Button size="lg" variant="secondary" className="shadow-card">
-              Get Started Now
+            <Button size="lg" variant="secondary" className="shadow-card" asChild>
+              <a href="https://www.meetup.com/stuart-vibe-coding-community/" target="_blank" rel="noopener noreferrer">
+                Get Started Now
+              </a>
             </Button>
           </div>
         </div>
