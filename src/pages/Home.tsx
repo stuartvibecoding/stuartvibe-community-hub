@@ -43,8 +43,10 @@ const Home = () => {
               collaborative projects, and endless learning opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="shadow-primary">
-                Join Our Next Meetup
+              <Button size="lg" variant="secondary" className="shadow-primary" asChild>
+                <a href="https://www.meetup.com/stuart-vibe-coding-community/" target="_blank" rel="noopener noreferrer">
+                  Join Our Next Meetup
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
                 Learn More
