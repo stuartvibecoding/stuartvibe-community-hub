@@ -10,12 +10,12 @@ const MemberShowcase = () => {
   // Mock data for members - in a real app this would come from an API or database
   const memberData: Record<string, any> = {
     amy: {
-      name: "Amy Chen",
-      title: "Full-Stack Developer",
-      bio: "Passionate about React and Node.js. Love building beautiful user interfaces and scalable backend systems.",
-      skills: ["React", "TypeScript", "Node.js", "MongoDB", "AWS"],
+      name: "Amy Stapleton",
+      title: "Creative Writer",
+      bio: "Collaborating with AI to craft engaging story experiences and new ways to enjoy poetry.",
+      skills: ["writing", "contemplating", "prompting", "editing", "pondering"],
       projects: [
-        { name: "E-commerce Platform", description: "Modern shopping experience with React and Stripe", link: "#" },
+        { name: "Scriptorium", description: "Classic poems stored in beautiful boxes", link: "https://archivusscriptorium.netlify.app/" },
         { name: "Task Management App", description: "Collaborative tool built with Next.js", link: "#" }
       ],
       personalNotes: [
@@ -27,9 +27,9 @@ const MemberShowcase = () => {
         { title: "Clean Code Practices", content: "Always write self-documenting code. If you need comments to explain what your code does, consider refactoring it first.", date: "2024-01-08" }
       ],
       contact: {
-        github: "amychen",
-        linkedin: "amy-chen-dev",
-        email: "amy@example.com"
+        github: "talks2bots",
+        linkedin: "unlisted",
+        email: "amy@ibisadvisory.com"
       }
     },
     jim: {
