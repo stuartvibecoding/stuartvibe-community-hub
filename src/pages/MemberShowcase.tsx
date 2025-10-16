@@ -110,8 +110,8 @@ const MemberShowcase = () => {
         { name: "AI Engineering", description: "Learning what makes AI agents tick", link: "#" }
       ],
       contact: {
-        github: "TQCollege",
-        linkedin: "trevor-q",
+        github: "www.github.com/TQCollege",
+        linkedin: "www.linkedin.com/trevor-q",
         email: "trevorquinlan@duck.com"
       }
     },
