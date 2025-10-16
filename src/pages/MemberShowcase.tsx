@@ -103,25 +103,25 @@ const MemberShowcase = () => {
     },
     trevor: {
       name: "Trevor Kim",
-      title: "Mobile App Developer",
-      bio: "Cross-platform mobile development specialist. Love creating smooth, native-feeling experiences with React Native and Flutter.",
-      skills: ["React Native", "Flutter", "iOS", "Android", "Firebase"],
+      title: "Car Fixer",
+      bio: "I basically fix cars for a living.",
+      skills: ["Losing sockets", "Cursing", "Injuring myself", "Occasionally fixing broken cars"],
       projects: [
-        { name: "Fitness Tracking App", description: "Cross-platform health and wellness application", link: "#" },
-        { name: "Local Business Directory", description: "Community-focused mobile app with maps integration", link: "#" }
+        { name: "AI Engineering", description: "Learning what makes AI agents tick", link: "#" },
+        { name: "#", description: "#", link: "#" }
       ],
       personalNotes: [
-        { content: "React Native 0.73 is out! The new architecture is finally stable. Migration went smoother than expected.", date: "2024-01-15" },
-        { content: "Experimenting with Flutter's new Impeller rendering engine. The performance gains are noticeable on older devices.", date: "2024-01-09" }
+        { content: "", date: "" },
+        { content: "", date: "" }
       ],
       sharedInsights: [
-        { title: "Mobile Performance Tips", content: "Always optimize your images and use lazy loading for lists. Memory management is crucial on mobile devices.", date: "2024-01-12" },
-        { title: "Cross-Platform Strategy", content: "Don't try to make everything look identical across platforms. Respect platform conventions for better UX.", date: "2024-01-07" }
+        { title: "", content: "", date: "" },
+        { title: "", content: "", date: "" }
       ],
       contact: {
-        github: "trevorkim",
-        linkedin: "trevor-kim-mobile",
-        email: "trevor@example.com"
+        github: "TQCollege",
+        linkedin: "trevor-q",
+        email: "trevorquinlan@duck.com"
       }
     },
     greg: {
