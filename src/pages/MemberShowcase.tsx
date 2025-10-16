@@ -108,7 +108,7 @@ const MemberShowcase = () => {
       skills: ["Losing sockets", "Cursing", "Injuring myself", "Occasionally fixing broken cars"],
       projects: [
         { name: "AI Engineering", description: "Learning what makes AI agents tick", link: "#" }
-        },
+      ],
       contact: {
         github: "TQCollege",
         linkedin: "trevor-q",
