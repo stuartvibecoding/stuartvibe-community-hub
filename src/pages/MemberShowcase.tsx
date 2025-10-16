@@ -107,17 +107,8 @@ const MemberShowcase = () => {
       bio: "I basically fix cars for a living.",
       skills: ["Losing sockets", "Cursing", "Injuring myself", "Occasionally fixing broken cars"],
       projects: [
-        { name: "AI Engineering", description: "Learning what makes AI agents tick", link: "#" },
-        { name: "#", description: "#", link: "#" }
-      ],
-      personalNotes: [
-        { content: "", date: "" },
-        { content: "", date: "" }
-      ],
-      sharedInsights: [
-        { title: "", content: "", date: "" },
-        { title: "", content: "", date: "" }
-      ],
+        { name: "AI Engineering", description: "Learning what makes AI agents tick", link: "#" }
+        },
       contact: {
         github: "TQCollege",
         linkedin: "trevor-q",
