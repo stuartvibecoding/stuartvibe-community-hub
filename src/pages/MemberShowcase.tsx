@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,6 +7,49 @@ import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 const MemberShowcase = () => {
   const { memberName } = useParams();
+  const [terminalHistory, setTerminalHistory] = useState<Array<{ type: 'input' | 'output', content: string }>>([]);
+  const [currentInput, setCurrentInput] = useState("");
+  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Command dictionary
+  const commandDict: Record<string, string> = {
+    clear: "CLEAR_TERMINAL"
+  };
+
+  useEffect(() => {
+    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [terminalHistory]);
+
+  const handleCommand = (command: string) => {
+    const trimmedCommand = command.trim();
+    
+    // Add command to history
+    setTerminalHistory(prev => [...prev, { type: 'input', content: trimmedCommand }]);
+
+    if (trimmedCommand === "") {
+      return;
+    }
+
+    // Check if command exists in dictionary
+    if (commandDict[trimmedCommand] === "CLEAR_TERMINAL") {
+      setTerminalHistory([]);
+      return;
+    }
+
+    if (commandDict[trimmedCommand]) {
+      setTerminalHistory(prev => [...prev, { type: 'output', content: commandDict[trimmedCommand] }]);
+    } else {
+      setTerminalHistory(prev => [...prev, { type: 'output', content: `bash: ${trimmedCommand}: command not found` }]);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleCommand(currentInput);
+      setCurrentInput("");
+    }
+  };
   
   // Mock data for members - in a real app this would come from an API or database
   const memberData: Record<string, any> = {
@@ -153,6 +197,61 @@ const MemberShowcase = () => {
     );
   }
 
+  // Special terminal UI for Trevor Kim
+  if (memberName?.toLowerCase() === "trevor") {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4 bg-background">
+        <div 
+          className="w-full max-w-4xl h-[600px] bg-black rounded-lg shadow-2xl border border-gray-700 overflow-hidden flex flex-col font-mono"
+          onClick={() => inputRef.current?.focus()}
+        >
+          {/* Terminal Header */}
+          <div className="bg-gray-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <span className="text-gray-400 text-sm ml-4">Trevor@Trevor:~</span>
+          </div>
+
+          {/* Terminal Body */}
+          <div className="flex-1 overflow-y-auto p-4 text-green-400 text-sm space-y-1">
+            {terminalHistory.map((item, index) => (
+              <div key={index}>
+                {item.type === 'input' ? (
+                  <div className="flex gap-2">
+                    <span className="text-blue-400">Trevor@Trevor:~$</span>
+                    <span className="text-white">{item.content}</span>
+                  </div>
+                ) : (
+                  <div className="text-green-400 pl-0">{item.content}</div>
+                )}
+              </div>
+            ))}
+            
+            {/* Current Input Line */}
+            <div className="flex gap-2">
+              <span className="text-blue-400">Trevor@Trevor:~$</span>
+              <input
+                ref={inputRef}
+                type="text"
+                value={currentInput}
+                onChange={(e) => setCurrentInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="flex-1 bg-transparent outline-none text-white caret-white"
+                autoFocus
+                spellCheck={false}
+              />
+            </div>
+            <div ref={terminalEndRef} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Regular member showcase for all other members
   return (
     <div className="min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
