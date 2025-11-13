@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const members = ["Amy", "Jim", "Diana", "Wadner", "Trevor", "Greg"];
+  const members = ["Amy", "Jim", "Diana", "Wadner", "Trevor", "Greg", "BruceL"];
 
   return (
     <div className="min-h-screen bg-background">

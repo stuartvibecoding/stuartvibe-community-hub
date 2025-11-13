@@ -181,6 +181,29 @@ const MemberShowcase = () => {
         linkedin: "greg-wilson-data",
         email: "greg@example.com"
       }
+    },
+    brucel: {
+      name: "Bruce L",
+      title: "Visionary Developer & Team Leader",
+      bio: "Bruce is a seasoned developer with a passion for creating impactful solutions and leading collaborative teams. Known for his strategic thinking and mentorship abilities.",
+      skills: ["Leadership", "Full-Stack Development", "Architecture Design", "Team Building", "Innovation"],
+      projects: [
+        { name: "Community Platform", description: "Building the next generation of community collaboration tools", link: "#" },
+        { name: "Tech Mentorship", description: "Guiding aspiring developers through their coding journey", link: "#" }
+      ],
+      personalNotes: [
+        { content: "Reflecting on the importance of code quality and maintainability. Clean architecture pays dividends in the long run.", date: "2024-01-16" },
+        { content: "Started a new initiative to improve team collaboration through pair programming sessions. Early results are promising!", date: "2024-01-12" }
+      ],
+      sharedInsights: [
+        { title: "Leadership in Tech", content: "Great leaders empower their teams. Focus on removing blockers and creating an environment where everyone can do their best work.", date: "2024-01-15" },
+        { title: "Architecture Principles", content: "Start simple and evolve. Over-engineering early is a common pitfall. Build for today's needs with tomorrow's flexibility in mind.", date: "2024-01-09" }
+      ],
+      contact: {
+        github: "brucel",
+        linkedin: "bruce-l-dev",
+        email: "bruce@stuartvibe.dev"
+      }
     }
   };
 
